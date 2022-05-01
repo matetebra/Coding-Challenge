@@ -1,0 +1,10 @@
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\bin\Debug\CodingChallenge.exe.config
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\bin\Debug\CodingChallenge.exe
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\bin\Debug\CodingChallenge.pdb
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.csproj.AssemblyReference.cache
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.Form1.resources
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.Properties.Resources.resources
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.csproj.GenerateResource.cache
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.csproj.CoreCompileInputs.cache
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.exe
+C:\Users\Mateja\source\repos\CodingChallenge\CodingChallenge\obj\Debug\CodingChallenge.pdb
