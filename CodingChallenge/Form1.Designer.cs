@@ -35,9 +35,7 @@ namespace CodingChallenge
             this.player = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.points = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.start = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.winnerName = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.leftSkeletonQuarter1 = new System.Windows.Forms.Label();
             this.leftSkeletonQuarter2 = new System.Windows.Forms.Label();
             this.leftSkeletonQuarter3 = new System.Windows.Forms.Label();
@@ -109,8 +107,10 @@ namespace CodingChallenge
             this.RG2F1 = new System.Windows.Forms.Label();
             this.RG1F1 = new System.Windows.Forms.Label();
             this.RSF1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -167,39 +167,20 @@ namespace CodingChallenge
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Location = new System.Drawing.Point(226, 221);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 253);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // winnerName
             // 
             this.winnerName.AutoSize = true;
-            this.winnerName.Location = new System.Drawing.Point(332, 486);
+            this.winnerName.Location = new System.Drawing.Point(341, 486);
             this.winnerName.Name = "winnerName";
             this.winnerName.Size = new System.Drawing.Size(35, 13);
             this.winnerName.TabIndex = 5;
             this.winnerName.Text = "label1";
             this.winnerName.Visible = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::CodingChallenge.Properties.Resources.tournament2;
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(602, 66);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(550, 267);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
             // leftSkeletonQuarter1
             // 
             this.leftSkeletonQuarter1.AutoSize = true;
-            this.leftSkeletonQuarter1.Location = new System.Drawing.Point(607, 85);
+            this.leftSkeletonQuarter1.Location = new System.Drawing.Point(551, 65);
             this.leftSkeletonQuarter1.Name = "leftSkeletonQuarter1";
             this.leftSkeletonQuarter1.Size = new System.Drawing.Size(35, 13);
             this.leftSkeletonQuarter1.TabIndex = 8;
@@ -209,7 +190,7 @@ namespace CodingChallenge
             // leftSkeletonQuarter2
             // 
             this.leftSkeletonQuarter2.AutoSize = true;
-            this.leftSkeletonQuarter2.Location = new System.Drawing.Point(607, 157);
+            this.leftSkeletonQuarter2.Location = new System.Drawing.Point(551, 150);
             this.leftSkeletonQuarter2.Name = "leftSkeletonQuarter2";
             this.leftSkeletonQuarter2.Size = new System.Drawing.Size(35, 13);
             this.leftSkeletonQuarter2.TabIndex = 9;
@@ -219,7 +200,7 @@ namespace CodingChallenge
             // leftSkeletonQuarter3
             // 
             this.leftSkeletonQuarter3.AutoSize = true;
-            this.leftSkeletonQuarter3.Location = new System.Drawing.Point(607, 228);
+            this.leftSkeletonQuarter3.Location = new System.Drawing.Point(551, 235);
             this.leftSkeletonQuarter3.Name = "leftSkeletonQuarter3";
             this.leftSkeletonQuarter3.Size = new System.Drawing.Size(35, 13);
             this.leftSkeletonQuarter3.TabIndex = 10;
@@ -229,7 +210,7 @@ namespace CodingChallenge
             // leftSkeletonQuarter4
             // 
             this.leftSkeletonQuarter4.AutoSize = true;
-            this.leftSkeletonQuarter4.Location = new System.Drawing.Point(607, 300);
+            this.leftSkeletonQuarter4.Location = new System.Drawing.Point(551, 320);
             this.leftSkeletonQuarter4.Name = "leftSkeletonQuarter4";
             this.leftSkeletonQuarter4.Size = new System.Drawing.Size(35, 13);
             this.leftSkeletonQuarter4.TabIndex = 11;
@@ -239,7 +220,7 @@ namespace CodingChallenge
             // rightSkeletonQuarter1
             // 
             this.rightSkeletonQuarter1.AutoSize = true;
-            this.rightSkeletonQuarter1.Location = new System.Drawing.Point(1063, 85);
+            this.rightSkeletonQuarter1.Location = new System.Drawing.Point(1086, 65);
             this.rightSkeletonQuarter1.Name = "rightSkeletonQuarter1";
             this.rightSkeletonQuarter1.Size = new System.Drawing.Size(35, 13);
             this.rightSkeletonQuarter1.TabIndex = 12;
@@ -249,7 +230,7 @@ namespace CodingChallenge
             // rightSkeletonQuarter2
             // 
             this.rightSkeletonQuarter2.AutoSize = true;
-            this.rightSkeletonQuarter2.Location = new System.Drawing.Point(1063, 157);
+            this.rightSkeletonQuarter2.Location = new System.Drawing.Point(1086, 150);
             this.rightSkeletonQuarter2.Name = "rightSkeletonQuarter2";
             this.rightSkeletonQuarter2.Size = new System.Drawing.Size(35, 13);
             this.rightSkeletonQuarter2.TabIndex = 13;
@@ -259,7 +240,7 @@ namespace CodingChallenge
             // rightSkeletonQuarter3
             // 
             this.rightSkeletonQuarter3.AutoSize = true;
-            this.rightSkeletonQuarter3.Location = new System.Drawing.Point(1063, 228);
+            this.rightSkeletonQuarter3.Location = new System.Drawing.Point(1086, 235);
             this.rightSkeletonQuarter3.Name = "rightSkeletonQuarter3";
             this.rightSkeletonQuarter3.Size = new System.Drawing.Size(35, 13);
             this.rightSkeletonQuarter3.TabIndex = 14;
@@ -269,7 +250,7 @@ namespace CodingChallenge
             // rightSkeletonQuarter4
             // 
             this.rightSkeletonQuarter4.AutoSize = true;
-            this.rightSkeletonQuarter4.Location = new System.Drawing.Point(1063, 300);
+            this.rightSkeletonQuarter4.Location = new System.Drawing.Point(1086, 320);
             this.rightSkeletonQuarter4.Name = "rightSkeletonQuarter4";
             this.rightSkeletonQuarter4.Size = new System.Drawing.Size(41, 13);
             this.rightSkeletonQuarter4.TabIndex = 15;
@@ -279,7 +260,7 @@ namespace CodingChallenge
             // leftSkeletonSemi1
             // 
             this.leftSkeletonSemi1.AutoSize = true;
-            this.leftSkeletonSemi1.Location = new System.Drawing.Point(720, 121);
+            this.leftSkeletonSemi1.Location = new System.Drawing.Point(683, 108);
             this.leftSkeletonSemi1.Name = "leftSkeletonSemi1";
             this.leftSkeletonSemi1.Size = new System.Drawing.Size(41, 13);
             this.leftSkeletonSemi1.TabIndex = 16;
@@ -289,7 +270,7 @@ namespace CodingChallenge
             // leftSkeletonSemi2
             // 
             this.leftSkeletonSemi2.AutoSize = true;
-            this.leftSkeletonSemi2.Location = new System.Drawing.Point(720, 265);
+            this.leftSkeletonSemi2.Location = new System.Drawing.Point(683, 277);
             this.leftSkeletonSemi2.Name = "leftSkeletonSemi2";
             this.leftSkeletonSemi2.Size = new System.Drawing.Size(41, 13);
             this.leftSkeletonSemi2.TabIndex = 17;
@@ -299,7 +280,7 @@ namespace CodingChallenge
             // rightSkeletonSemi1
             // 
             this.rightSkeletonSemi1.AutoSize = true;
-            this.rightSkeletonSemi1.Location = new System.Drawing.Point(947, 121);
+            this.rightSkeletonSemi1.Location = new System.Drawing.Point(954, 108);
             this.rightSkeletonSemi1.Name = "rightSkeletonSemi1";
             this.rightSkeletonSemi1.Size = new System.Drawing.Size(41, 13);
             this.rightSkeletonSemi1.TabIndex = 18;
@@ -309,7 +290,7 @@ namespace CodingChallenge
             // rightSkeletonSemi2
             // 
             this.rightSkeletonSemi2.AutoSize = true;
-            this.rightSkeletonSemi2.Location = new System.Drawing.Point(947, 265);
+            this.rightSkeletonSemi2.Location = new System.Drawing.Point(954, 277);
             this.rightSkeletonSemi2.Name = "rightSkeletonSemi2";
             this.rightSkeletonSemi2.Size = new System.Drawing.Size(41, 13);
             this.rightSkeletonSemi2.TabIndex = 19;
@@ -319,7 +300,7 @@ namespace CodingChallenge
             // leftSkeletonFinal
             // 
             this.leftSkeletonFinal.AutoSize = true;
-            this.leftSkeletonFinal.Location = new System.Drawing.Point(832, 242);
+            this.leftSkeletonFinal.Location = new System.Drawing.Point(817, 250);
             this.leftSkeletonFinal.Name = "leftSkeletonFinal";
             this.leftSkeletonFinal.Size = new System.Drawing.Size(41, 13);
             this.leftSkeletonFinal.TabIndex = 20;
@@ -329,7 +310,7 @@ namespace CodingChallenge
             // rightSkeletonFinal
             // 
             this.rightSkeletonFinal.AutoSize = true;
-            this.rightSkeletonFinal.Location = new System.Drawing.Point(832, 144);
+            this.rightSkeletonFinal.Location = new System.Drawing.Point(817, 134);
             this.rightSkeletonFinal.Name = "rightSkeletonFinal";
             this.rightSkeletonFinal.Size = new System.Drawing.Size(41, 13);
             this.rightSkeletonFinal.TabIndex = 21;
@@ -351,7 +332,7 @@ namespace CodingChallenge
             this.LSQ1.AutoSize = true;
             this.LSQ1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSQ1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSQ1.Location = new System.Drawing.Point(611, 110);
+            this.LSQ1.Location = new System.Drawing.Point(558, 97);
             this.LSQ1.Name = "LSQ1";
             this.LSQ1.Size = new System.Drawing.Size(13, 13);
             this.LSQ1.TabIndex = 23;
@@ -360,7 +341,7 @@ namespace CodingChallenge
             // LG1Q1
             // 
             this.LG1Q1.AutoSize = true;
-            this.LG1Q1.Location = new System.Drawing.Point(630, 110);
+            this.LG1Q1.Location = new System.Drawing.Point(577, 97);
             this.LG1Q1.Name = "LG1Q1";
             this.LG1Q1.Size = new System.Drawing.Size(13, 13);
             this.LG1Q1.TabIndex = 24;
@@ -369,7 +350,7 @@ namespace CodingChallenge
             // LG2Q1
             // 
             this.LG2Q1.AutoSize = true;
-            this.LG2Q1.Location = new System.Drawing.Point(649, 110);
+            this.LG2Q1.Location = new System.Drawing.Point(598, 97);
             this.LG2Q1.Name = "LG2Q1";
             this.LG2Q1.Size = new System.Drawing.Size(13, 13);
             this.LG2Q1.TabIndex = 25;
@@ -378,7 +359,7 @@ namespace CodingChallenge
             // LG3Q1
             // 
             this.LG3Q1.AutoSize = true;
-            this.LG3Q1.Location = new System.Drawing.Point(668, 110);
+            this.LG3Q1.Location = new System.Drawing.Point(620, 97);
             this.LG3Q1.Name = "LG3Q1";
             this.LG3Q1.Size = new System.Drawing.Size(13, 13);
             this.LG3Q1.TabIndex = 26;
@@ -387,7 +368,7 @@ namespace CodingChallenge
             // LG3Q2
             // 
             this.LG3Q2.AutoSize = true;
-            this.LG3Q2.Location = new System.Drawing.Point(668, 134);
+            this.LG3Q2.Location = new System.Drawing.Point(620, 121);
             this.LG3Q2.Name = "LG3Q2";
             this.LG3Q2.Size = new System.Drawing.Size(13, 13);
             this.LG3Q2.TabIndex = 30;
@@ -396,7 +377,7 @@ namespace CodingChallenge
             // LG2Q2
             // 
             this.LG2Q2.AutoSize = true;
-            this.LG2Q2.Location = new System.Drawing.Point(649, 134);
+            this.LG2Q2.Location = new System.Drawing.Point(598, 121);
             this.LG2Q2.Name = "LG2Q2";
             this.LG2Q2.Size = new System.Drawing.Size(13, 13);
             this.LG2Q2.TabIndex = 29;
@@ -405,7 +386,7 @@ namespace CodingChallenge
             // LG1Q2
             // 
             this.LG1Q2.AutoSize = true;
-            this.LG1Q2.Location = new System.Drawing.Point(630, 134);
+            this.LG1Q2.Location = new System.Drawing.Point(577, 121);
             this.LG1Q2.Name = "LG1Q2";
             this.LG1Q2.Size = new System.Drawing.Size(13, 13);
             this.LG1Q2.TabIndex = 28;
@@ -416,7 +397,7 @@ namespace CodingChallenge
             this.LSQ2.AutoSize = true;
             this.LSQ2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSQ2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSQ2.Location = new System.Drawing.Point(611, 134);
+            this.LSQ2.Location = new System.Drawing.Point(558, 121);
             this.LSQ2.Name = "LSQ2";
             this.LSQ2.Size = new System.Drawing.Size(13, 13);
             this.LSQ2.TabIndex = 27;
@@ -425,7 +406,7 @@ namespace CodingChallenge
             // LG3Q3
             // 
             this.LG3Q3.AutoSize = true;
-            this.LG3Q3.Location = new System.Drawing.Point(668, 254);
+            this.LG3Q3.Location = new System.Drawing.Point(620, 268);
             this.LG3Q3.Name = "LG3Q3";
             this.LG3Q3.Size = new System.Drawing.Size(13, 13);
             this.LG3Q3.TabIndex = 34;
@@ -434,7 +415,7 @@ namespace CodingChallenge
             // LG2Q3
             // 
             this.LG2Q3.AutoSize = true;
-            this.LG2Q3.Location = new System.Drawing.Point(649, 254);
+            this.LG2Q3.Location = new System.Drawing.Point(598, 268);
             this.LG2Q3.Name = "LG2Q3";
             this.LG2Q3.Size = new System.Drawing.Size(13, 13);
             this.LG2Q3.TabIndex = 33;
@@ -443,7 +424,7 @@ namespace CodingChallenge
             // LG1Q3
             // 
             this.LG1Q3.AutoSize = true;
-            this.LG1Q3.Location = new System.Drawing.Point(630, 254);
+            this.LG1Q3.Location = new System.Drawing.Point(577, 268);
             this.LG1Q3.Name = "LG1Q3";
             this.LG1Q3.Size = new System.Drawing.Size(13, 13);
             this.LG1Q3.TabIndex = 32;
@@ -454,7 +435,7 @@ namespace CodingChallenge
             this.LSQ3.AutoSize = true;
             this.LSQ3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSQ3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSQ3.Location = new System.Drawing.Point(611, 254);
+            this.LSQ3.Location = new System.Drawing.Point(558, 268);
             this.LSQ3.Name = "LSQ3";
             this.LSQ3.Size = new System.Drawing.Size(13, 13);
             this.LSQ3.TabIndex = 31;
@@ -463,7 +444,7 @@ namespace CodingChallenge
             // LG3Q4
             // 
             this.LG3Q4.AutoSize = true;
-            this.LG3Q4.Location = new System.Drawing.Point(668, 277);
+            this.LG3Q4.Location = new System.Drawing.Point(620, 291);
             this.LG3Q4.Name = "LG3Q4";
             this.LG3Q4.Size = new System.Drawing.Size(13, 13);
             this.LG3Q4.TabIndex = 38;
@@ -472,7 +453,7 @@ namespace CodingChallenge
             // LG2Q4
             // 
             this.LG2Q4.AutoSize = true;
-            this.LG2Q4.Location = new System.Drawing.Point(649, 277);
+            this.LG2Q4.Location = new System.Drawing.Point(598, 291);
             this.LG2Q4.Name = "LG2Q4";
             this.LG2Q4.Size = new System.Drawing.Size(13, 13);
             this.LG2Q4.TabIndex = 37;
@@ -481,7 +462,7 @@ namespace CodingChallenge
             // LG1Q4
             // 
             this.LG1Q4.AutoSize = true;
-            this.LG1Q4.Location = new System.Drawing.Point(630, 277);
+            this.LG1Q4.Location = new System.Drawing.Point(577, 291);
             this.LG1Q4.Name = "LG1Q4";
             this.LG1Q4.Size = new System.Drawing.Size(13, 13);
             this.LG1Q4.TabIndex = 36;
@@ -492,7 +473,7 @@ namespace CodingChallenge
             this.LSQ4.AutoSize = true;
             this.LSQ4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSQ4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSQ4.Location = new System.Drawing.Point(611, 277);
+            this.LSQ4.Location = new System.Drawing.Point(558, 291);
             this.LSQ4.Name = "LSQ4";
             this.LSQ4.Size = new System.Drawing.Size(13, 13);
             this.LSQ4.TabIndex = 35;
@@ -501,7 +482,7 @@ namespace CodingChallenge
             // LG3S1
             // 
             this.LG3S1.AutoSize = true;
-            this.LG3S1.Location = new System.Drawing.Point(780, 185);
+            this.LG3S1.Location = new System.Drawing.Point(752, 178);
             this.LG3S1.Name = "LG3S1";
             this.LG3S1.Size = new System.Drawing.Size(13, 13);
             this.LG3S1.TabIndex = 42;
@@ -510,7 +491,7 @@ namespace CodingChallenge
             // LG2S1
             // 
             this.LG2S1.AutoSize = true;
-            this.LG2S1.Location = new System.Drawing.Point(761, 185);
+            this.LG2S1.Location = new System.Drawing.Point(730, 178);
             this.LG2S1.Name = "LG2S1";
             this.LG2S1.Size = new System.Drawing.Size(13, 13);
             this.LG2S1.TabIndex = 41;
@@ -519,7 +500,7 @@ namespace CodingChallenge
             // LG1S1
             // 
             this.LG1S1.AutoSize = true;
-            this.LG1S1.Location = new System.Drawing.Point(742, 185);
+            this.LG1S1.Location = new System.Drawing.Point(709, 178);
             this.LG1S1.Name = "LG1S1";
             this.LG1S1.Size = new System.Drawing.Size(13, 13);
             this.LG1S1.TabIndex = 40;
@@ -530,7 +511,7 @@ namespace CodingChallenge
             this.LSS1.AutoSize = true;
             this.LSS1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSS1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSS1.Location = new System.Drawing.Point(723, 185);
+            this.LSS1.Location = new System.Drawing.Point(690, 178);
             this.LSS1.Name = "LSS1";
             this.LSS1.Size = new System.Drawing.Size(13, 13);
             this.LSS1.TabIndex = 39;
@@ -539,7 +520,7 @@ namespace CodingChallenge
             // LG3S2
             // 
             this.LG3S2.AutoSize = true;
-            this.LG3S2.Location = new System.Drawing.Point(780, 209);
+            this.LG3S2.Location = new System.Drawing.Point(752, 202);
             this.LG3S2.Name = "LG3S2";
             this.LG3S2.Size = new System.Drawing.Size(13, 13);
             this.LG3S2.TabIndex = 46;
@@ -548,7 +529,7 @@ namespace CodingChallenge
             // LG2S2
             // 
             this.LG2S2.AutoSize = true;
-            this.LG2S2.Location = new System.Drawing.Point(761, 209);
+            this.LG2S2.Location = new System.Drawing.Point(730, 202);
             this.LG2S2.Name = "LG2S2";
             this.LG2S2.Size = new System.Drawing.Size(13, 13);
             this.LG2S2.TabIndex = 45;
@@ -557,7 +538,7 @@ namespace CodingChallenge
             // LG1S2
             // 
             this.LG1S2.AutoSize = true;
-            this.LG1S2.Location = new System.Drawing.Point(742, 209);
+            this.LG1S2.Location = new System.Drawing.Point(709, 202);
             this.LG1S2.Name = "LG1S2";
             this.LG1S2.Size = new System.Drawing.Size(13, 13);
             this.LG1S2.TabIndex = 44;
@@ -568,7 +549,7 @@ namespace CodingChallenge
             this.LSS2.AutoSize = true;
             this.LSS2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSS2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSS2.Location = new System.Drawing.Point(723, 209);
+            this.LSS2.Location = new System.Drawing.Point(690, 202);
             this.LSS2.Name = "LSS2";
             this.LSS2.Size = new System.Drawing.Size(13, 13);
             this.LSS2.TabIndex = 43;
@@ -577,7 +558,7 @@ namespace CodingChallenge
             // RG3Q1
             // 
             this.RG3Q1.AutoSize = true;
-            this.RG3Q1.Location = new System.Drawing.Point(1122, 110);
+            this.RG3Q1.Location = new System.Drawing.Point(1155, 97);
             this.RG3Q1.Name = "RG3Q1";
             this.RG3Q1.Size = new System.Drawing.Size(13, 13);
             this.RG3Q1.TabIndex = 50;
@@ -586,7 +567,7 @@ namespace CodingChallenge
             // RG2Q1
             // 
             this.RG2Q1.AutoSize = true;
-            this.RG2Q1.Location = new System.Drawing.Point(1103, 110);
+            this.RG2Q1.Location = new System.Drawing.Point(1133, 97);
             this.RG2Q1.Name = "RG2Q1";
             this.RG2Q1.Size = new System.Drawing.Size(13, 13);
             this.RG2Q1.TabIndex = 49;
@@ -595,7 +576,7 @@ namespace CodingChallenge
             // RG1Q1
             // 
             this.RG1Q1.AutoSize = true;
-            this.RG1Q1.Location = new System.Drawing.Point(1084, 110);
+            this.RG1Q1.Location = new System.Drawing.Point(1112, 97);
             this.RG1Q1.Name = "RG1Q1";
             this.RG1Q1.Size = new System.Drawing.Size(13, 13);
             this.RG1Q1.TabIndex = 48;
@@ -606,7 +587,7 @@ namespace CodingChallenge
             this.RSQ1.AutoSize = true;
             this.RSQ1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSQ1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSQ1.Location = new System.Drawing.Point(1065, 110);
+            this.RSQ1.Location = new System.Drawing.Point(1093, 97);
             this.RSQ1.Name = "RSQ1";
             this.RSQ1.Size = new System.Drawing.Size(13, 13);
             this.RSQ1.TabIndex = 47;
@@ -615,7 +596,7 @@ namespace CodingChallenge
             // RG3Q2
             // 
             this.RG3Q2.AutoSize = true;
-            this.RG3Q2.Location = new System.Drawing.Point(1122, 134);
+            this.RG3Q2.Location = new System.Drawing.Point(1155, 121);
             this.RG3Q2.Name = "RG3Q2";
             this.RG3Q2.Size = new System.Drawing.Size(13, 13);
             this.RG3Q2.TabIndex = 54;
@@ -624,7 +605,7 @@ namespace CodingChallenge
             // RG2Q2
             // 
             this.RG2Q2.AutoSize = true;
-            this.RG2Q2.Location = new System.Drawing.Point(1103, 134);
+            this.RG2Q2.Location = new System.Drawing.Point(1133, 121);
             this.RG2Q2.Name = "RG2Q2";
             this.RG2Q2.Size = new System.Drawing.Size(13, 13);
             this.RG2Q2.TabIndex = 53;
@@ -633,7 +614,7 @@ namespace CodingChallenge
             // RG1Q2
             // 
             this.RG1Q2.AutoSize = true;
-            this.RG1Q2.Location = new System.Drawing.Point(1084, 134);
+            this.RG1Q2.Location = new System.Drawing.Point(1112, 121);
             this.RG1Q2.Name = "RG1Q2";
             this.RG1Q2.Size = new System.Drawing.Size(13, 13);
             this.RG1Q2.TabIndex = 52;
@@ -644,7 +625,7 @@ namespace CodingChallenge
             this.RSQ2.AutoSize = true;
             this.RSQ2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSQ2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSQ2.Location = new System.Drawing.Point(1065, 134);
+            this.RSQ2.Location = new System.Drawing.Point(1093, 121);
             this.RSQ2.Name = "RSQ2";
             this.RSQ2.Size = new System.Drawing.Size(13, 13);
             this.RSQ2.TabIndex = 51;
@@ -653,7 +634,7 @@ namespace CodingChallenge
             // RG3Q3
             // 
             this.RG3Q3.AutoSize = true;
-            this.RG3Q3.Location = new System.Drawing.Point(1122, 254);
+            this.RG3Q3.Location = new System.Drawing.Point(1155, 268);
             this.RG3Q3.Name = "RG3Q3";
             this.RG3Q3.Size = new System.Drawing.Size(13, 13);
             this.RG3Q3.TabIndex = 58;
@@ -662,7 +643,7 @@ namespace CodingChallenge
             // RG2Q3
             // 
             this.RG2Q3.AutoSize = true;
-            this.RG2Q3.Location = new System.Drawing.Point(1103, 254);
+            this.RG2Q3.Location = new System.Drawing.Point(1133, 268);
             this.RG2Q3.Name = "RG2Q3";
             this.RG2Q3.Size = new System.Drawing.Size(13, 13);
             this.RG2Q3.TabIndex = 57;
@@ -671,7 +652,7 @@ namespace CodingChallenge
             // RG1Q3
             // 
             this.RG1Q3.AutoSize = true;
-            this.RG1Q3.Location = new System.Drawing.Point(1084, 254);
+            this.RG1Q3.Location = new System.Drawing.Point(1112, 268);
             this.RG1Q3.Name = "RG1Q3";
             this.RG1Q3.Size = new System.Drawing.Size(13, 13);
             this.RG1Q3.TabIndex = 56;
@@ -682,7 +663,7 @@ namespace CodingChallenge
             this.RSQ3.AutoSize = true;
             this.RSQ3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSQ3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSQ3.Location = new System.Drawing.Point(1065, 254);
+            this.RSQ3.Location = new System.Drawing.Point(1093, 268);
             this.RSQ3.Name = "RSQ3";
             this.RSQ3.Size = new System.Drawing.Size(13, 13);
             this.RSQ3.TabIndex = 55;
@@ -691,7 +672,7 @@ namespace CodingChallenge
             // RG3Q4
             // 
             this.RG3Q4.AutoSize = true;
-            this.RG3Q4.Location = new System.Drawing.Point(1122, 277);
+            this.RG3Q4.Location = new System.Drawing.Point(1155, 291);
             this.RG3Q4.Name = "RG3Q4";
             this.RG3Q4.Size = new System.Drawing.Size(13, 13);
             this.RG3Q4.TabIndex = 62;
@@ -700,7 +681,7 @@ namespace CodingChallenge
             // RG2Q4
             // 
             this.RG2Q4.AutoSize = true;
-            this.RG2Q4.Location = new System.Drawing.Point(1103, 277);
+            this.RG2Q4.Location = new System.Drawing.Point(1133, 291);
             this.RG2Q4.Name = "RG2Q4";
             this.RG2Q4.Size = new System.Drawing.Size(13, 13);
             this.RG2Q4.TabIndex = 61;
@@ -709,7 +690,7 @@ namespace CodingChallenge
             // RG1Q4
             // 
             this.RG1Q4.AutoSize = true;
-            this.RG1Q4.Location = new System.Drawing.Point(1084, 277);
+            this.RG1Q4.Location = new System.Drawing.Point(1112, 291);
             this.RG1Q4.Name = "RG1Q4";
             this.RG1Q4.Size = new System.Drawing.Size(13, 13);
             this.RG1Q4.TabIndex = 60;
@@ -720,7 +701,7 @@ namespace CodingChallenge
             this.RSQ4.AutoSize = true;
             this.RSQ4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSQ4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSQ4.Location = new System.Drawing.Point(1065, 277);
+            this.RSQ4.Location = new System.Drawing.Point(1093, 291);
             this.RSQ4.Name = "RSQ4";
             this.RSQ4.Size = new System.Drawing.Size(13, 13);
             this.RSQ4.TabIndex = 59;
@@ -729,7 +710,7 @@ namespace CodingChallenge
             // RG3S1
             // 
             this.RG3S1.AutoSize = true;
-            this.RG3S1.Location = new System.Drawing.Point(1012, 185);
+            this.RG3S1.Location = new System.Drawing.Point(1023, 178);
             this.RG3S1.Name = "RG3S1";
             this.RG3S1.Size = new System.Drawing.Size(13, 13);
             this.RG3S1.TabIndex = 66;
@@ -738,7 +719,7 @@ namespace CodingChallenge
             // RG2S1
             // 
             this.RG2S1.AutoSize = true;
-            this.RG2S1.Location = new System.Drawing.Point(993, 185);
+            this.RG2S1.Location = new System.Drawing.Point(1001, 178);
             this.RG2S1.Name = "RG2S1";
             this.RG2S1.Size = new System.Drawing.Size(13, 13);
             this.RG2S1.TabIndex = 65;
@@ -747,7 +728,7 @@ namespace CodingChallenge
             // RG1S1
             // 
             this.RG1S1.AutoSize = true;
-            this.RG1S1.Location = new System.Drawing.Point(974, 185);
+            this.RG1S1.Location = new System.Drawing.Point(980, 178);
             this.RG1S1.Name = "RG1S1";
             this.RG1S1.Size = new System.Drawing.Size(13, 13);
             this.RG1S1.TabIndex = 64;
@@ -758,7 +739,7 @@ namespace CodingChallenge
             this.RSS1.AutoSize = true;
             this.RSS1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSS1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSS1.Location = new System.Drawing.Point(955, 185);
+            this.RSS1.Location = new System.Drawing.Point(961, 178);
             this.RSS1.Name = "RSS1";
             this.RSS1.Size = new System.Drawing.Size(13, 13);
             this.RSS1.TabIndex = 63;
@@ -767,7 +748,7 @@ namespace CodingChallenge
             // RG3S2
             // 
             this.RG3S2.AutoSize = true;
-            this.RG3S2.Location = new System.Drawing.Point(1012, 209);
+            this.RG3S2.Location = new System.Drawing.Point(1023, 202);
             this.RG3S2.Name = "RG3S2";
             this.RG3S2.Size = new System.Drawing.Size(13, 13);
             this.RG3S2.TabIndex = 70;
@@ -776,7 +757,7 @@ namespace CodingChallenge
             // RG2S2
             // 
             this.RG2S2.AutoSize = true;
-            this.RG2S2.Location = new System.Drawing.Point(993, 209);
+            this.RG2S2.Location = new System.Drawing.Point(1001, 202);
             this.RG2S2.Name = "RG2S2";
             this.RG2S2.Size = new System.Drawing.Size(13, 13);
             this.RG2S2.TabIndex = 69;
@@ -785,7 +766,7 @@ namespace CodingChallenge
             // RG1S2
             // 
             this.RG1S2.AutoSize = true;
-            this.RG1S2.Location = new System.Drawing.Point(974, 209);
+            this.RG1S2.Location = new System.Drawing.Point(980, 202);
             this.RG1S2.Name = "RG1S2";
             this.RG1S2.Size = new System.Drawing.Size(13, 13);
             this.RG1S2.TabIndex = 68;
@@ -796,7 +777,7 @@ namespace CodingChallenge
             this.RSS2.AutoSize = true;
             this.RSS2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSS2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSS2.Location = new System.Drawing.Point(955, 209);
+            this.RSS2.Location = new System.Drawing.Point(961, 202);
             this.RSS2.Name = "RSS2";
             this.RSS2.Size = new System.Drawing.Size(13, 13);
             this.RSS2.TabIndex = 67;
@@ -805,7 +786,7 @@ namespace CodingChallenge
             // LG3F1
             // 
             this.LG3F1.AutoSize = true;
-            this.LG3F1.Location = new System.Drawing.Point(894, 209);
+            this.LG3F1.Location = new System.Drawing.Point(889, 202);
             this.LG3F1.Name = "LG3F1";
             this.LG3F1.Size = new System.Drawing.Size(13, 13);
             this.LG3F1.TabIndex = 74;
@@ -814,7 +795,7 @@ namespace CodingChallenge
             // LG2F1
             // 
             this.LG2F1.AutoSize = true;
-            this.LG2F1.Location = new System.Drawing.Point(875, 209);
+            this.LG2F1.Location = new System.Drawing.Point(867, 202);
             this.LG2F1.Name = "LG2F1";
             this.LG2F1.Size = new System.Drawing.Size(13, 13);
             this.LG2F1.TabIndex = 73;
@@ -823,7 +804,7 @@ namespace CodingChallenge
             // LG1F1
             // 
             this.LG1F1.AutoSize = true;
-            this.LG1F1.Location = new System.Drawing.Point(856, 209);
+            this.LG1F1.Location = new System.Drawing.Point(846, 202);
             this.LG1F1.Name = "LG1F1";
             this.LG1F1.Size = new System.Drawing.Size(13, 13);
             this.LG1F1.TabIndex = 72;
@@ -834,7 +815,7 @@ namespace CodingChallenge
             this.LSF1.AutoSize = true;
             this.LSF1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LSF1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSF1.Location = new System.Drawing.Point(837, 209);
+            this.LSF1.Location = new System.Drawing.Point(827, 202);
             this.LSF1.Name = "LSF1";
             this.LSF1.Size = new System.Drawing.Size(13, 13);
             this.LSF1.TabIndex = 71;
@@ -843,7 +824,7 @@ namespace CodingChallenge
             // RG3F1
             // 
             this.RG3F1.AutoSize = true;
-            this.RG3F1.Location = new System.Drawing.Point(894, 185);
+            this.RG3F1.Location = new System.Drawing.Point(889, 178);
             this.RG3F1.Name = "RG3F1";
             this.RG3F1.Size = new System.Drawing.Size(13, 13);
             this.RG3F1.TabIndex = 78;
@@ -852,7 +833,7 @@ namespace CodingChallenge
             // RG2F1
             // 
             this.RG2F1.AutoSize = true;
-            this.RG2F1.Location = new System.Drawing.Point(875, 185);
+            this.RG2F1.Location = new System.Drawing.Point(867, 178);
             this.RG2F1.Name = "RG2F1";
             this.RG2F1.Size = new System.Drawing.Size(13, 13);
             this.RG2F1.TabIndex = 77;
@@ -861,7 +842,7 @@ namespace CodingChallenge
             // RG1F1
             // 
             this.RG1F1.AutoSize = true;
-            this.RG1F1.Location = new System.Drawing.Point(856, 185);
+            this.RG1F1.Location = new System.Drawing.Point(846, 178);
             this.RG1F1.Name = "RG1F1";
             this.RG1F1.Size = new System.Drawing.Size(13, 13);
             this.RG1F1.TabIndex = 76;
@@ -872,18 +853,37 @@ namespace CodingChallenge
             this.RSF1.AutoSize = true;
             this.RSF1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.RSF1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RSF1.Location = new System.Drawing.Point(837, 185);
+            this.RSF1.Location = new System.Drawing.Point(827, 178);
             this.RSF1.Name = "RSF1";
             this.RSF1.Size = new System.Drawing.Size(13, 13);
             this.RSF1.TabIndex = 75;
             this.RSF1.Text = "0";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::CodingChallenge.Properties.Resources.tournament2;
+            this.pictureBox3.InitialImage = null;
+            this.pictureBox3.Location = new System.Drawing.Point(538, 43);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(648, 308);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Location = new System.Drawing.Point(226, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(273, 253);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1178, 625);
+            this.ClientSize = new System.Drawing.Size(1210, 625);
             this.Controls.Add(this.RG3F1);
             this.Controls.Add(this.RG2F1);
             this.Controls.Add(this.RG1F1);
@@ -964,8 +964,8 @@ namespace CodingChallenge
             this.Name = "Form1";
             this.Text = "Match";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

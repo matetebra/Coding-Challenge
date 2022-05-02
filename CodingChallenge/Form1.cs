@@ -1,12 +1,16 @@
-﻿using System;
+﻿#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace CodingChallenge
 {
@@ -51,17 +55,20 @@ namespace CodingChallenge
         }
 
         private void start_Click(object sender, EventArgs e)
-        {
+        {         
             listOfPlayers.Clear();  // brisemo listu i ponovo dodajemo iste igrace kao na pocetku za ponovno random generisanje turnira pritiskom na dugme start
             AddPlayers();           // sto znaci da nema potrebe da se gasi program i ponovo pokrece, vec moze odmah vise puta da se klikce na dugme
             foreach (TennisPlayer tp in listOfPlayers)
             {
                 tp.Pts = 0;     // stavljamo svim igracima poene na 0
             }
+            start.Visible = false;  // sakrivamo dugme
+            UpdateList();
+            Restart();
             createSkeletons();
         }
 
-        private void createSkeletons()
+        private async Task createSkeletons()
         {
             List<TennisPlayer> leftSkeleton = new List<TennisPlayer>();
             List<TennisPlayer> rightSkeleton = new List<TennisPlayer>();
@@ -114,6 +121,7 @@ namespace CodingChallenge
 
             #endregion
 
+            await Task.Delay(8000); //  8 sekundi za odigravanje cetvrtfinala
 
             List<TennisPlayer> newListQuarter = new List<TennisPlayer>();
             bool switchSkeletons = false;
@@ -138,7 +146,7 @@ namespace CodingChallenge
             {
                 tp.Pts += 2;    //  recimo da igraci koji su prosli cetvrtfinale dobijaju po 2 poena
             }
-            
+
             #region Visibility for semi
 
             leftSkeletonSemi1.Text = newListSemi[0].NameAndSurname;
@@ -153,10 +161,14 @@ namespace CodingChallenge
             rightSkeletonSemi1.Visible = true;
             rightSkeletonSemi2.Visible = true;
 
+
             #endregion
 
+            UpdateList();
+            await Task.Delay(4000); //  4 sekundi za odigravanje polufinala
+
             round = 2;  //  druga runda predstavlja polufinale
-            List<TennisPlayer> newListFinal = PlayGame(newListSemi);
+            List<TennisPlayer> newListFinal = PlayGame(newListSemi);      
             foreach (TennisPlayer tp in newListFinal)
             {
                 tp.Pts += 4;    // igraci koji su prosli polufinale dobijaju jos 4 po poena
@@ -174,37 +186,28 @@ namespace CodingChallenge
 
             #endregion
 
+            UpdateList();
+            await Task.Delay(2000); // 2 sekunde za finale
+
             round = 3;  // treca runda je finale
             List<TennisPlayer> winner = PlayGame(newListFinal);
             winner[0].Pts += 6; //  igrac koji je osvojio turnir dobija jos 6 poena
 
+
+            #region Visibility for winner of the tournament
+
             winnerName.Text = winner[0].NameAndSurname; //  ispisujemo naziv igraca
             winnerName.Visible = true;
             winnerOfTheTour.Visible = true;
+
+            pictureBox1.Visible = true;
             pictureBox1.BackgroundImage = winner[0].Picture;    //  prikazujemo njegovu sliku
 
-            //  bubble sort
-            //  sortiramo igrace po broju poena
+            #endregion
 
-            for (int i = 0; i < listOfPlayers.Count() - 1; i++)
-                for (int j = 0; j < listOfPlayers.Count() - i - 1; j++)
-                    if (listOfPlayers[j].Pts < listOfPlayers[j + 1].Pts)
-                    {
-                        TennisPlayer tmp = listOfPlayers[j];
-                        listOfPlayers[j] = listOfPlayers[j + 1];
-                        listOfPlayers[j + 1] = tmp;
-                    }
-
-            listView1.Items.Clear();        // brisemo prethodnu listu da bi upisali novu
-            int rankNumber = 1;
-            for (int i = 0; i < listOfPlayers.Count(); i++)
-            {
-                listOfPlayers[i].Rank = rankNumber;     // upisujemo nove rankove igracima
-                ListViewItem list = new ListViewItem(new string[] { listOfPlayers[i].Rank.ToString(), listOfPlayers[i].State.ToString(), listOfPlayers[i].NameAndSurname, listOfPlayers[i].Pts.ToString(), });
-                listView1.Items.Add(list);
-                rankNumber++;
-            }
-
+            UpdateList();
+            start.Text = "Restart"; //  menjamo dugme iz start u restart
+            start.Visible = true;   // cim se zavrsi mec vracamo ga ponovo da bude vidljivo
         }
 
         private List<TennisPlayer> PlayGame(List<TennisPlayer> list)
@@ -217,11 +220,11 @@ namespace CodingChallenge
                 int game1LeftPlayerForResult = 0, game2LeftPlayerForResult = 0, game3LeftPlayerForResult = 0;   // odigrani game-ovi za setove koji se prikazuju (levi igraca)
                 int game1RightPlayerForResult = 0, game2RightPlayerForResult = 0, game3RightPlayerForResult = 0;    // odigrani game-ovi za setove koji se prikazuju (desni igrac)
                 int setLeftPlayer = 0, setRightPlayer = 0;
-                while (setLeftPlayer < 2 && setRightPlayer < 2)
+                while (setLeftPlayer < 2 && setRightPlayer < 2) // igra se u 2 dobijena seta
                 {
                     int gameLeftPlayer = 0, gameRightPlayer = 0;              
                     while ((gameLeftPlayer < 6 || gameLeftPlayer - gameRightPlayer <= 1) && (gameRightPlayer < 6 || gameRightPlayer - gameLeftPlayer <= 1))
-                    {
+                    {                                                     // set je osvojen ukoliko neki igrac dobije 6 game-a (u slucaju da bude 5-5 igra se na 2 game-a razlike)
 
                         if (list[i].Rank < list[i + 1].Rank)
                         {
@@ -260,18 +263,20 @@ namespace CodingChallenge
                                 else
                                     gameLeftPlayer++;
                             }
-                        }
+                        }                   
                     }
 
                     if (setLeftPlayer == 0 && setRightPlayer == 0)  //  prvi set upisuju se game-ovi za taj set
                     {
                         game1LeftPlayerForResult = gameLeftPlayer;
                         game1RightPlayerForResult = gameRightPlayer;
+
                     }
                     if ((setLeftPlayer == 1 && setRightPlayer == 0) || (setLeftPlayer == 0 && setRightPlayer == 1)) //  drugi set upisuju se game-ovi za taj set
                     {
                         game2LeftPlayerForResult = gameLeftPlayer;
                         game2RightPlayerForResult = gameRightPlayer;
+
                     }
                     if (setLeftPlayer == 1 && setRightPlayer == 1)  //  igra se u 2 dobijena seta, ukoliko bude 1-1 igra se i taj treci set i upisuju game-ovi za njega
                     {
@@ -399,6 +404,141 @@ namespace CodingChallenge
             }
 
             return listToReturn;
+        }
+
+        public void UpdateList()
+        {
+            //  bubble sort
+            //  sortiramo igrace po broju poena
+
+            for (int i = 0; i < listOfPlayers.Count() - 1; i++)
+                for (int j = 0; j < listOfPlayers.Count() - i - 1; j++)
+                    if (listOfPlayers[j].Pts < listOfPlayers[j + 1].Pts)
+                    {
+                        TennisPlayer tmp = listOfPlayers[j];
+                        listOfPlayers[j] = listOfPlayers[j + 1];
+                        listOfPlayers[j + 1] = tmp;
+                    }
+
+            listView1.Items.Clear();        // brisemo prethodnu listu da bi upisali novu
+            int rankNumber = 1;
+            for (int i = 0; i < listOfPlayers.Count(); i++)
+            {
+                listOfPlayers[i].Rank = rankNumber;     // upisujemo nove rankove igracima
+                ListViewItem list = new ListViewItem(new string[] { listOfPlayers[i].Rank.ToString(), listOfPlayers[i].State.ToString(), listOfPlayers[i].NameAndSurname, listOfPlayers[i].Pts.ToString(), });
+                listView1.Items.Add(list);
+                rankNumber++;
+            }
+            listView1.Refresh();
+        }
+
+        private void Restart()
+        {
+            //  restartujemo setove i game-ove gornejg levog skeletona (cetvrtfinale)
+
+            LG1Q1.Text = "0";
+            LG2Q1.Text = "0";
+            LG3Q1.Text = "0";
+
+            LG1Q2.Text = "0";
+            LG2Q2.Text = "0";
+            LG3Q2.Text = "0";
+
+            LSQ1.Text = "0";
+            LSQ2.Text = "0";
+
+            //  restartujemo setove i game-ove donjeg levog skeletona (cetvrtfinale)
+
+            LG1Q3.Text = "0";
+            LG2Q3.Text = "0";
+            LG3Q3.Text = "0";
+
+            LG1Q4.Text = "0";
+            LG2Q4.Text = "0";
+            LG3Q4.Text = "0";
+
+            LSQ3.Text = "0";
+            LSQ4.Text = "0";
+
+            //  restartujemo setove i game-ove za gornjeg desnog skeletona (cetvrtfinale)
+
+            RG1Q1.Text = "0";
+            RG2Q1.Text = "0";
+            RG3Q1.Text = "0";
+
+            RG1Q2.Text = "0";
+            RG2Q2.Text = "0";
+            RG3Q2.Text = "0";
+
+            RSQ1.Text = "0";
+            RSQ2.Text = "0";
+
+            //  restartujemo setove i game-ove za donjeg desnog skeletona (cetvrtfinale)
+
+            RG1Q3.Text = "0";
+            RG2Q3.Text = "0";
+            RG3Q3.Text = "0";
+
+            RG1Q4.Text = "0";
+            RG2Q4.Text = "0";
+            RG3Q4.Text = "0";
+
+            RSQ3.Text = "0";
+            RSQ4.Text = "0";
+
+            //  restartujemo setove i game-ove za levi skeleton (polufinale)
+
+            LG1S1.Text = "0";
+            LG2S1.Text = "0";
+            LG3S1.Text = "0";
+
+            LG1S2.Text = "0";
+            LG2S2.Text = "0";
+            LG3S2.Text = "0";
+
+            LSS1.Text = "0";
+            LSS2.Text = "0";
+
+            //  restartujemo setove i game-ove za desni skeleton (polufinale)
+
+            RG1S1.Text = "0";
+            RG2S1.Text = "0";
+            RG3S1.Text = "0";
+
+            RG1S2.Text = "0";
+            RG2S2.Text = "0";
+            RG3S2.Text = "0";
+
+            RSS1.Text = "0";
+            RSS2.Text = "0";
+
+            //  restartujemo setove i game-ove za finale
+
+            LG1F1.Text = "0";
+            LG2F1.Text = "0";
+            LG3F1.Text = "0";
+
+            RG1F1.Text = "0";
+            RG2F1.Text = "0";
+            RG3F1.Text = "0";
+
+            LSF1.Text = "0";
+            RSF1.Text = "0";
+
+            // stavljamo da se ne vide prethodni igraci dok se ne izgenerisu novi
+
+            leftSkeletonSemi1.Visible = false;
+            leftSkeletonSemi2.Visible = false;
+
+            rightSkeletonSemi1.Visible = false;
+            rightSkeletonSemi2.Visible = false;
+
+            leftSkeletonFinal.Visible = false;
+            rightSkeletonFinal.Visible = false;
+
+            winnerOfTheTour.Visible = false;
+            winnerName.Visible = false;
+            pictureBox1.Visible = false;
         }
     }
 }
